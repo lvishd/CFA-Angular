@@ -1,0 +1,43 @@
+<ion-content >
+  <ion-grid class="background" >
+    <ion-row  >
+      <ion-col size="12">
+        <h1 class="ion-text-center">Le bateau de Thibault</h1>
+      </ion-col>
+      <ion-col size="12" class="test">
+        <p class="ion-text-center">Vente en direct de notre bateau <br>
+          Produit selon la saison, Livraisons sur Paris <br>
+          06.63.99.99.78 <br>
+          lebateaudethibault@gmail.com <br>
+          www.facebook.com/lebateaudethibautl</p>
+        </ion-col>
+      <ion-col size="12" >
+        <ion-row >
+          <ion-col>
+            <!-- home.page.html -->
+            <app-button-base [name]="buttonPromo.name" [uri]="buttonPromo.uri" [routerLink]="['/product']">
+            </app-button-base>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <app-button-base [name]="buttonBateau.name" [uri]="buttonBateau.uri"></app-button-base>
+          </ion-col>
+          <ion-col >
+            <app-button-base [name]="buttonRecettes.name" [uri]="buttonRecettes.uri"></app-button-base>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <app-button-base [name]="buttonRestaurants.name" [uri]="buttonRestaurants.uri"></app-button-base>
+          </ion-col>
+          <ion-col>
+            <app-button-base [name]="buttonContact.name" [uri]="buttonContact.uri"></app-button-base>
+          </ion-col>
+        </ion-row>
+       </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+

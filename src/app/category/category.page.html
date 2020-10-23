@@ -1,0 +1,7 @@
+<ion-content >
+  <app-header></app-header>
+  <ion-grid class="background" >
+    <p class="text">Choissisez vos produit</p>
+    <app-button-product *ngFor="let item of data" [name]="item.name"></app-button-product>
+  </ion-grid>
+</ion-content>
