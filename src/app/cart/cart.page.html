@@ -1,0 +1,15 @@
+<ion-content >
+  <app-header></app-header>
+  <ion-grid class="background" >
+    <p class="text">Modifier la quantité en tappant sur chaque produit</p> 
+    <app-button-cart 
+      *ngFor="let prod of cart"
+      [name]="prod.name"
+      [price]="prod.price"
+      [count]="prod.count"
+      (click)="openPicker(prod)"
+    >
+    </app-button-cart>
+  </ion-grid>
+</ion-content>
+
