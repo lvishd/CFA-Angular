@@ -39,19 +39,18 @@ export class ProductPage implements OnInit {
     return test;
   }
 
-  clear() {
-    this.storage.clear().then(() => {
-      console.log('all keys cleared');
-    });  
-  }
+  // clear() {
+  //   this.storage.clear().then(() => {
+  //     console.log('all keys cleared');
+  //   });  
+  // }
 
-  // test
-  getAll() { 
-    console.log(this.store) 
-    this.storage.forEach(v => {
-      console.log(v);
-    })
-  }
+  // getAll() { 
+  //   console.log(this.store) 
+  //   this.storage.forEach(v => {
+  //     console.log(v);
+  //   })
+  // }
 
   ngOnInit() {
     this.storage.forEach(v => {
