@@ -1,11 +1,14 @@
-import { HeaderComponent } from './../header/header.component';
-import { ButtonProductComponent } from './../button-product/button-product.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
+
 import { CategoryPageRoutingModule } from './category-routing.module';
+
 import { CategoryPage } from './category.page';
+import { ButtonBaseComponent } from '../button-base/button-base.component';
+import { HeaderComponent } from '../header/header.component';
 
 @NgModule({
   imports: [
@@ -14,6 +17,6 @@ import { CategoryPage } from './category.page';
     IonicModule,
     CategoryPageRoutingModule
   ],
-  declarations: [CategoryPage, ButtonProductComponent, HeaderComponent]
+  declarations: [CategoryPage, ButtonBaseComponent, HeaderComponent]
 })
 export class CategoryPageModule {}

@@ -12,13 +12,14 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'product',
-    loadChildren: () => import('./product/products.module').then( m => m.ProductsPageModule)
-  },
-  {
     path: 'category',
     loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
+  },
+  {
+    path: 'product',
+    loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   }
+
 ];
 
 @NgModule({

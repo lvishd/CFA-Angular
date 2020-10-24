@@ -1,7 +1,6 @@
+import { RestapiService } from './../services/restapi.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Storage } from '@ionic/storage';
-import { nextTick } from 'process';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -10,60 +9,45 @@ import { nextTick } from 'process';
 })
 export class CategoryPage implements OnInit {
 
-    categories: Array<any> ;
-    store: Array<any> = [];
+  constructor(public apirest: RestapiService, private router: Router) { }
 
-  	constructor(private route: ActivatedRoute, private router: Router, private storage: Storage) {
-	    this.route.queryParams.subscribe(params => {
-		    if (this.router.getCurrentNavigation().extras.state) {
-			    this.categories = this.router.getCurrentNavigation().extras.state.categories
-		    }
-		});	
+  poissons: Array<any>;
+  coquillages: Array<any>;
+  crustaces: Array<any>;
+  promotions: Array<any>;
+  
+  ngOnInit() {
+    this.apirest.getProducts().subscribe(res => {
+      this.poissons = res.filter((prod) => prod.category == 0)
+      this.coquillages = res.filter((prod) => prod.category == 1)
+      this.crustaces = res.filter((prod) => prod.category == 2)
+      this.promotions = res.filter((prod) => prod.discount != 0)
+    }, err => console.log(err))
+    
+  }
+
+  categoryParams(data) {
+    const navigationExtras: NavigationExtras= {
+      state : {
+        categories: data
+      }
+    }
+    this.router.navigate( ['product'], navigationExtras )
   }
   
-  add(item) {
-    if(!this.inStore(item)) {
-      this.storage.set(item.name, item);      
-      this.store.push(item)
-    } else {
-      this.storage.remove(item.name)
-      this.store = this.store.filter(el => el.id != item.id)
-    }   
+  openPoissonWithCategory() {
+    this.categoryParams(this.poissons)
   }
 
-  inStore(item) {
-    let test = false
-    this.store.map(it => {
-      if(it.id === item.id) {
-        test = true
-      }
-    })
-    return test;
+  openCoquillageWithCategory() {
+    this.categoryParams(this.coquillages)
   }
-
-  clear() {
-    this.storage.clear().then(() => {
-      console.log('all keys cleared');
-     
-    });  
+ 
+  openCrustaceWithCategory() {
+    this.categoryParams(this.crustaces)
   }
-
-  // test
-  getAll() { 
-    console.log(this.store) 
-    this.storage.forEach(v => {
-      console.log(v);
-      
-    })
-  }
-
-  ngOnInit() {
-    this.storage.forEach(v => {
-      this.store.push(v)
-    })
-    console.clear() 
-    console.log('init store :');
-    console.log(this.store);
+  openPromotionWithCategory() {
+    this.categoryParams(this.promotions)
   }
 
 }

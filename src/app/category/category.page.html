@@ -1,15 +1,11 @@
 <ion-content >
   <app-header></app-header>
   <ion-grid class="background" >
-    <ion-button (click)="getAll()">getAll</ion-button>
-    <ion-button (click)="clear()">clear</ion-button>
     <p class="text">Choissisez vos produit</p>
-    <app-button-product 
-      *ngFor="let item of categories" 
-      [name]="item.name" 
-      (click)="add(item)"
-      [isCheck]="inStore(item)">
-    </app-button-product>
-      
+    <app-button-base name="Poissons" uri="../../assets/poulpe.png" (click)="openPoissonWithCategory()"></app-button-base>
+    <app-button-base name="Coquillages" uri="../../assets/poulpe.png" (click)="openCoquillageWithCategory()"></app-button-base>
+    <app-button-base name="Crustacés" uri="../../assets/poulpe.png" (click)="openCrustaceWithCategory()"></app-button-base>
+    <app-button-base name="Promotions" uri="../../assets/poulpe.png" (click)="openPromotionWithCategory()"></app-button-base>
   </ion-grid>
 </ion-content>
+
