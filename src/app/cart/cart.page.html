@@ -2,14 +2,28 @@
   <app-header></app-header>
   <ion-grid class="background" >
     <p class="text">Modifier la quantité en tappant sur chaque produit</p> 
-    <app-button-cart 
-      *ngFor="let prod of cart"
-      [name]="prod.name"
-      [price]="prod.price"
-      [count]="prod.count"
-      (click)="openPicker(prod)"
-    >
-    </app-button-cart>
+    
+          <app-button-cart 
+            *ngFor="let prod of cart"
+            [name]="prod.name"
+            [price]="prod.price"
+            [count]="prod.count"
+            (click)="openPicker(prod)"
+          >
+          </app-button-cart>
+        
+        <div class="footer">
+          <p class="right">Tatal:{{ getPrice() }}€</p>
+          <p>Lieu de livraison (choisir) <br>
+            Bistro des Gascons <br>
+            26 Avenue de Tourville, 75007 Paris<br>
+            Date de livraison <br>
+            Samedi 16 Mars, à partir de 9h
+          </p>
+          <p class="right" (click)="showAlert()">Valider</p>
+        </div>
+        
+
   </ion-grid>
 </ion-content>
 
