@@ -8,7 +8,7 @@ import { ProductsPageRoutingModule } from './products-routing.module';
 
 import { ProductsPage } from './products.page';
 import { ButtonBaseComponent } from '../button-base/button-base.component'
-import { HeaderComponent } from './../header/header.component';
+import { HeaderComponent } from '../header/header.component';
 
 
 @NgModule({

@@ -29,7 +29,7 @@ export class ProductsPage implements OnInit {
   categoryParams(data) {
     const navigationExtras: NavigationExtras= {
       state : {
-        data: data
+        categories: data
       }
     }
     this.router.navigate( ['category'], navigationExtras )

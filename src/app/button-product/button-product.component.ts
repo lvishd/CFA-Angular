@@ -7,6 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ButtonProductComponent implements OnInit {
   @Input() name: string;
+  @Input() isCheck: boolean;
+
+  getCheck() {
+    return this.isCheck ? 'OK' : ''
+  }
 
   constructor() { }
 
