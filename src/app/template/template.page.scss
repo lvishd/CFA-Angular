@@ -1,0 +1,35 @@
+.text {
+  text-align: center;
+}
+
+.background {
+  --background: url(../../assets/background@3x.png) 0 0/100% 100% no-repeat;
+}
+
+.col {
+  justify-items: center;
+}
+
+.containter{
+  // flex-wrap: wrap;
+  // flex-direction: row;
+  display: grid;
+  grid-template-rows: 2;
+  gap: 10px;
+  grid-auto-flow: row;
+  
+}
+
+
+.column {
+  float: top;
+  height: 100%;
+}
+
+.row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

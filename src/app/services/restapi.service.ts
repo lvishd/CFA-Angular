@@ -12,4 +12,8 @@ export class RestapiService {
   getProducts() {
     return this.http.get<any[]>('../assets/products.json')
   }
+
+  getElements() {
+    return this.http.get<any[]>('../assets/elements.json')
+  }
 }

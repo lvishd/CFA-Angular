@@ -1,0 +1,42 @@
+<ion-content class="background">
+
+  <!-- <ion-grid>
+
+    <ion-col class="col">
+
+      <p>Titre</p>
+
+      <p>Sous titre</p>
+
+      <app-button-base *ngFor="let item of categories" [name]="item.name" [uri]="item.uri"
+        (click)="openVueDetails(item)">
+      </app-button-base>
+
+    </ion-col>
+
+
+
+  </ion-grid> -->
+
+  <div class="column">
+    <div class="row" style="height: 15%;">
+      <h1>{{toptext}}</h1>
+    </div>
+    <div class="row" style="height: 25%;">
+      <p class="text">{{titre}}</p>
+    </div>
+    <div class="row" style="height: 50%;">
+
+      <div class="column">
+        <app-button-base *ngFor="let item of categories" [name]="item.name" [uri]="item.uri"
+          (click)="openVueDetails(item)">
+        </app-button-base>
+      </div>
+
+
+    </div>
+    <div class="row" style="height: 10%;"></div>
+  </div>
+
+
+</ion-content>

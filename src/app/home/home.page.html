@@ -11,6 +11,7 @@
           lebateaudethibault@gmail.com <br>
           www.facebook.com/lebateaudethibautl</p>
         </ion-col>
+
       <ion-col size="12" >
         <ion-row >
           <ion-col>
@@ -20,21 +21,25 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <app-button-base [name]="buttonBateau.name" [uri]="buttonBateau.uri"></app-button-base>
+            <app-button-base [name]="buttonBateau.name" [uri]="buttonBateau.uri" (click)="openTemplateWithBateaux()">
+          </app-button-base>
           </ion-col>
           <ion-col >
-            <app-button-base [name]="buttonRecettes.name" [uri]="buttonRecettes.uri"></app-button-base>
+            <app-button-base [name]="buttonRecettes.name" [uri]="buttonRecettes.uri"  (click)="openTemplateWithRecettes()">
+            </app-button-base>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <app-button-base [name]="buttonRestaurants.name" [uri]="buttonRestaurants.uri"></app-button-base>
+            <app-button-base [name]="buttonRestaurants.name" [uri]="buttonRestaurants.uri"  (click)="openTemplateWithRestaurants()">
+            </app-button-base>
           </ion-col>
           <ion-col>
             <app-button-base [name]="buttonContact.name" [uri]="buttonContact.uri"></app-button-base>
           </ion-col>
         </ion-row>
        </ion-col>
+       
     </ion-row>
   </ion-grid>
 </ion-content>

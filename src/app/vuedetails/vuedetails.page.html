@@ -1,0 +1,54 @@
+<ion-content class="background">
+
+
+
+
+  <ion-grid style="height: 100%; display: flex; flex-flow: column;">
+
+
+
+    <ion-row>
+      <ion-col>
+        <div id="container">
+          <h1 class="ion-text-center">{{details.name}} </h1>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="vertical-center">
+          <div class="center">
+            <ion-img src="{{ details.uri }}" class="ion-align-self-end"></ion-img>
+          </div>   
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <div id="container">
+          <p class="ion-text-center">{{details.subtext}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col>
+        <div id="container">
+          <p class="ion-text-center">{{details.poesie}}</p>
+        </div>
+
+      </ion-col>
+    </ion-row>
+
+
+
+
+  </ion-grid>
+
+
+
+</ion-content>
